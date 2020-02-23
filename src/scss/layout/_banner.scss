@@ -1,0 +1,155 @@
+.banner {
+  background-color: $color-red;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  @include respond-to('large') {
+    padding: 21px 0;
+  }
+  &__content {
+    @include respond-to('large') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__clock {
+    width: 100%;
+    min-height: 200px;
+    background-image: url("./../../src/images/icons/clock-face.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 58px;
+    @include respond-to('large') {
+      justify-content: flex-start;
+      flex: 1;
+      background-position: left;
+      margin-bottom: 0;
+      max-width: 430px;
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+       flex: none;
+      }
+    }
+    h1 {
+      position: relative;
+      span {
+        color: $color-yellow;
+        display: block;
+      }
+    }
+    .duration {
+      display: inline-block;
+      background-color: $color-black;
+      color: $color-white;
+      font-size: 18px;
+      padding: 10px;
+      text-transform: uppercase;
+      position: absolute;
+      top: -70px;
+      right: -38px;
+      @include respond-to('small') {
+        top: -32px;
+        right: -124px;
+      }
+      @include respond-to('extra-large') {
+        top: -47px;
+        right: -231px;
+        font-size: 31px;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        top: 100%;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-bottom: 10px solid transparent;
+        border-left:10px solid $color-black;
+      }
+      p {
+        font-weight: 700;
+        display: inline-block;
+        @include respond-to('large') {
+          font-size: 31px;
+        }
+      }
+    }
+    .delivery {
+      width: 100px;
+      height: 100px;
+      background-image: url("./../../src/images/icons/dostawa.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      display: block;
+      position: absolute;
+      right: -30px;
+      bottom: -117px;
+      @include respond-to('large') {
+        width: 116px;
+        height: 116px;
+        bottom: -86px;
+        right: -150px;
+      }
+    }
+  }
+  &__rabat {
+    text-align: center;
+    padding: 20px 0 20px;
+    @include respond-to('extra-large') {
+      padding: 0;
+    }
+    h2 {
+      font-weight: 700;
+      margin-bottom: 17px;
+      @include respond-to('extra-large') {
+        margin-bottom: 15px;
+        margin-top: 25px;
+        margin-left: 21px;
+        text-align: left;
+      }
+    }
+    p {
+      color: $color-yellow;
+      font-size: 58px;
+      line-height: 60px;
+      display: block;
+      @include respond-to('extra-large') {
+        font-size: 185px;
+        line-height: 109px;
+        letter-spacing: -4px;
+      }
+      &::after {
+        content: '%';
+        position: relative;
+        font-size: 32px;
+        top: -17px;
+        right: 0;
+        @include respond-to('extra-large') {
+          font-size: 103px;
+        }
+      }
+    }
+  }
+  &__timer {
+    border: 2px solid $color-white;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: $color-white;
+    max-width: 437px;
+    margin: 0 auto;
+    @include respond-to('extra-large') {
+      padding: 26px 37px;
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.products {
+  padding: 60px 0;
+  &__header {
+    padding-bottom: 20px;
+    @include respond-to('large') {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 9px 0 27px 0;
+    }
+    h4 {
+      span {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background-color: $color-red;
+        color: $color-white;
+        font-size: 14px;
+        margin-right: 5px;
+      }
+    }
+  }
+  &__items {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  &__select-number {
+    display: flex;
+    margin-bottom: 20px;
+    p {
+      margin-right: 10px;
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border: 1px solid $color-light-gray;
+    padding: 5px;
+    margin: 5px;
+    font-size: 12px;
+    width: calc((100% / 2) - 10px);
+    @include respond-to('small') {
+      padding: 0;
+      font-size: 16px;
+    }
+    @include respond-to('medium') {
+      width: calc((100% / 3) - 10px);
+    }
+    @include respond-to('extra-large') {
+      width: calc((100% / 4) - 10px);
+    }
+    &__header {
+      width: 100%;
+      @include respond-to('small') {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+      }
+      p {
+        @include respond-to('small') {
+          padding: 5px;
+        }
+        @include respond-to('large') {
+          padding: 10px 0 20px 20px;
+        }
+      }
+      .save {
+        display: block;
+        width: 100%;
+        margin-top: 5px;
+        padding: 3px;
+        border: 1px solid $color-red;
+        font-size: 10px;
+        color: $color-red;
+        @include respond-to('small') {
+          flex: 1;
+          margin-top: 0;
+          display: inline-block;
+          @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            flex: none;
+          }
+        }
+        @include respond-to('large') {
+          font-size: 15px;
+          max-width: 175px;
+        }
+      }
+    }
+    &__image {
+      width: 100%;
+      padding: 17px 0;
+      text-align: center;
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    &__footer {
+      width: 100%;
+      @include respond-to('small') {
+        padding: 5px;
+      }
+      @include respond-to('large') {
+        padding: 0 20px 20px;
+      }
+      .price {
+        color: $color-red;
+        font-weight: 700;
+        font-size: 14px;
+        @include respond-to('medium') {
+          font-size: 20px;
+        }
+        &-old {
+          text-decoration: line-through;
+        }
+      }
+      small {
+        font-size: 60%;
+        color: $color-gray;
+      }
+    }
+  }
+}
